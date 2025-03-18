@@ -1,0 +1,508 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  padding: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Top Navbar Styling */
+.top-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Left: Logo & Links */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Adds space between logo and links */
+}
+
+.navbar-logo {
+  height: 40px; /* Adjust logo size */
+  width: auto;
+}
+
+/* Navbar Right: Links */
+.navbar-left a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+  margin-left: 50px; /* Adjust value as needed */
+
+}
+
+.navbar-left a:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+#search {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 200px;
+  transition: all 0.3s ease-in-out;
+}
+
+#search:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+
+/* Banner Section */
+.banner {
+  position: relative;
+}
+
+.banner img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+}
+
+.banner-text-top {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(221, 218, 231);
+  text-align: center;
+  font-size: 35px;
+}
+
+.banner-text h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.banner-text p {
+  font-size: 24px;
+}
+
+.scroll-banner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(to right, rgb(135, 125, 126), rgb(56, 56, 63));
+
+  padding: 20px 0;
+  width: 100%;
+  margin: 0px;
+}
+
+/* Wrapper ensures only 1 item (image + text) is visible */
+.scroll-banner-wrapper {
+  width: 1000px; /* Increased width for side-by-side layout */
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  border-radius: 10px;
+}
+
+/* Banner container for sliding effect */
+.scroll-banner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 400%; /* 4 banners, each taking full width */
+}
+
+/* Individual banner items (image + text) */
+.banner-item {
+  width: 1000px; /* Matches wrapper width */
+  height: 500px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text container (left side) */
+.banner-text {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  background: #f8f8f8;
+  text-align: center;
+}
+
+/* Image container (right side) */
+.banner-item img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  /* border-radius: 10px; */
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.left-btn {
+  left: 10px;
+}
+
+.right-btn {
+  right: 10px;
+}
+
+.cards{
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Container for the product cards */
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 45px;
+  padding: 25px;
+  background: linear-gradient(to right, rgb(97, 228, 145), rgb(41, 182, 217));
+}
+
+/* Individual product card */
+.product-card {
+  width: 350px;
+  height: 600px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.8s ease;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover effect for cards */
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image wrapper for multiple images */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 60%;  /* Only 60% of the card height */
+  overflow: hidden;
+}
+
+/* Styling for images inside the wrapper */
+.image-wrapper img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+/* Show first image by default */
+.image-wrapper img:first-child {
+  opacity: 1;
+}
+
+/* Image slideshow animation on hover */
+.product-card:hover .image-wrapper img:nth-child(1) { animation: fadeImages 4s infinite 0s; }
+.product-card:hover .image-wrapper img:nth-child(2) { animation: fadeImages 4s infinite 1.25s; }
+.product-card:hover .image-wrapper img:nth-child(3) { animation: fadeImages 4s infinite 2.5s; }
+.product-card:hover .image-wrapper img:nth-child(4) { animation: fadeImages 4s infinite 3.75s; }
+
+/* Keyframes for fading effect */
+@keyframes fadeImages {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  50% { opacity: 0; }
+  75% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Product info (name + description) */
+.product-info {
+  flex-grow: 1;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-info h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-info p {
+  font-size: 16px;
+  color: #6f6a6a;
+}
+
+
+
+
+
+
+
+/* Section Styling */
+.featured-section {
+  width: 100%;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 40px;
+}
+
+/* Carousel */
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 50px 0;
+}
+
+.carousel-frame {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Item Cards */
+.item-card {
+  width: 200px;
+  background: #fff;
+  margin: 0 10px;
+  padding: 35px;
+  border-radius: 10px;
+  border: 3px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.item-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.item-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.item-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.item-card p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.purchase-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.purchase-btn:hover {
+  background: #ff3b3b;
+}
+
+/* Navigation Buttons */
+.nav-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .item-card {
+      width: 150px;
+  }
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #f8f0ed; /* Light beige background */
+  padding: 30px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  color: #722f2f; /* Dark brown text */
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #722f2f;
+}
+
+/* Contact Icons */
+.contact-list li {
+  display: flex;
+  align-items: center;
+}
+
+.contact-list i {
+  margin-right: 8px;
+  font-size: 18px;
+  color: #722f2f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer-column {
+      margin-bottom: 20px;
+  }
+}
+
+
+
+.icon-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.icon-button i {
+  font-size: 22px;
+  margin-right: 5px;
+}
+
+.icon-label {
+  font-size: 14px;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 50%;
+}

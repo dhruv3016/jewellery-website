@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist Page</title>
+</head>
+
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 24px;
+}
+
+header .wishlist-icon {
+  position: relative;
+}
+
+header .wishlist-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.wishlist-container {
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wishlist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wishlist-item {
+  display: flex;
+  gap: 20px;
+}
+
+.product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+</style>
+<body>
+
+  <header>
+    <div class="logo">YourShop</div>
+    <div class="wishlist-icon">
+      <span class="wishlist-count">5</span> <!-- Number of items in wishlist -->
+    </div>
+  </header>
+
+  <div class="wishlist-container">
+    <h1>Your Wishlist</h1>
+
+    <div class="wishlist-items">
+      <div class="wishlist-item">
+        <img src="men_1.png" alt="Product Image" class="product-image">
+        <div class="item-details">
+          <h2>Product Name</h2>
+          <p class="item-price">$15.00</p>
+          <button class="remove-item">Remove</button>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Add more wishlist-item sections as needed -->
+
+    </div>
+
+    <div class="action-buttons">
+      <button class="clear-wishlist">Clear Wishlist</button>
+      <button class="shop-now">Continue Shopping</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">About Us</a> | 
+      <a href="#">Contact</a> | 
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+
+</body>
+<script>
+    // Example of basic functionality for remove item and add to cart
+const removeButtons = document.querySelectorAll('.remove-item');
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+const clearWishlistButton = document.querySelector('.clear-wishlist');
+
+removeButtons.forEach((button) => {
+  button.addEventListener('click', (event) => {
+    // Remove the item from the wishlist
+    const item = event.target.closest('.wishlist-item');
+    item.remove();
+    updateWishlistCount();
+  });
+});
+
+addToCartButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    // Simulate adding item to cart
+    alert("Item added to cart!");
+  });
+});
+
+clearWishlistButton.addEventListener('click', () => {
+  // Clear all items from the wishlist
+  const wishlistItems = document.querySelector('.wishlist-items');
+  wishlistItems.innerHTML = '';  // Remove all items
+  updateWishlistCount();
+});
+
+function updateWishlistCount() {
+  const wishlistCount = document.querySelector('.wishlist-count');
+  const totalItems = document.querySelectorAll('.wishlist-item').length;
+  wishlistCount.textContent = totalItems;
+}
+
+</script>
+</html>

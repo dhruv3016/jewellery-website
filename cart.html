@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Page</title>
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 24px;
+}
+
+header .cart-icon {
+  position: relative;
+}
+
+header .cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.cart-container {
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 20px;
+}
+
+.product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity input {
+  width: 40px;
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+#check {
+    color: white;
+    text-decoration: none; /* Optional: Removes underline from the link */
+}
+
+#check:hover {
+    color: white;
+    text-decoration: underline; /* Optional: Adds underline on hover */
+}
+
+button a {
+    color: white; /* Ensures the link inside button is white */
+    text-decoration: none;
+}
+
+button a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.cart-summary {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.cart-summary div {
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+</style>
+<body>
+
+  <header>
+    <div class="logo">YourShop</div>
+    <div class="cart-icon">
+      <span class="cart-count">3</span> <!-- Number of items in cart -->
+    </div>
+  </header>
+
+  <div class="cart-container">
+    <h1>Your Cart</h1>
+
+    <div class="cart-items">
+      <div class="cart-item">
+        <img src="product1.jpg" alt="Product Image" class="product-image">
+        <div class="item-details">
+          <h2>Product Name</h2>
+          <p class="item-price">$10.00</p>
+          <div class="quantity">
+            <button class="decrease">-</button>
+            <input type="number" value="1" class="quantity-input">
+            <button class="increase">+</button>
+          </div>
+          <button class="remove-item">Remove</button>
+        </div>
+      </div>
+      
+      <!-- Add more cart-item sections as needed -->
+
+    </div>
+
+    <div class="cart-summary">
+      <div class="subtotal">
+        <span>Subtotal:</span>
+        <span id="subtotal-price">$30.00</span> <!-- Subtotal amount -->
+      </div>
+      <div class="shipping">
+        <span>Shipping:</span>
+        <span id="shipping-price">$5.00</span> <!-- Shipping cost -->
+      </div>
+      <div class="taxes">
+        <span>Taxes:</span>
+        <span id="taxes-price">$2.00</span> <!-- Taxes amount -->
+      </div>
+      <div class="total">
+        <span>Total:</span>
+        <span id="total-price">$37.00</span> <!-- Total price -->
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <button class="clear-cart">Clear Cart</button>
+      <button class="checkout" id="check"><a href="payment.html">Proceed to Checkout</a></button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">About Us</a> | 
+      <a href="#">Contact</a> | 
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+
+</body>
+<script>
+    // Example of basic functionality for quantity change and price update
+const decreaseButtons = document.querySelectorAll('.decrease');
+const increaseButtons = document.querySelectorAll('.increase');
+const quantityInputs = document.querySelectorAll('.quantity-input');
+const subtotalPrice = document.getElementById('subtotal-price');
+const shippingPrice = document.getElementById('shipping-price');
+const taxesPrice = document.getElementById('taxes-price');
+const totalPrice = document.getElementById('total-price');
+
+decreaseButtons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    const input = quantityInputs[index];
+    if (input.value > 1) {
+      input.value = parseInt(input.value) - 1;
+      updateTotal();
+    }
+  });
+});
+
+increaseButtons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    const input = quantityInputs[index];
+    input.value = parseInt(input.value) + 1;
+    updateTotal();
+  });
+});
+
+function updateTotal() {
+  const subtotal = Array.from(quantityInputs).reduce((total, input, index) => {
+    const price = parseFloat(document.querySelectorAll('.item-price')[index].textContent.replace('$', ''));
+    return total + price * parseInt(input.value);
+  }, 0);
+  
+  const shipping = 5.00; // Example static shipping
+  const taxes = subtotal * 0.07; // 7% tax
+
+  const total = subtotal + shipping + taxes;
+
+  subtotalPrice.textContent = `$${subtotal.toFixed(2)}`;
+  shippingPrice.textContent = `$${shipping.toFixed(2)}`;
+  taxesPrice.textContent = `$${taxes.toFixed(2)}`;
+  totalPrice.textContent = `$${total.toFixed(2)}`;
+}
+
+// Clear Cart Functionality
+document.querySelector('.clear-cart').addEventListener('click', () => {
+  // Clear all items from the cart
+  document.querySelector('.cart-items').innerHTML = '';
+  updateTotal();
+});
+
+</script>
+
+</html>

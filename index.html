@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+
+  <!-- Top Navbar -->
+  <div class="top-navbar">
+    <div class="navbar-left">
+      <img src="reflecTrend.png" alt="Logo" class="navbar-logo">
+    
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contactus.html">Contact Us</a>
+    </div>
+    <div class="navbar-right">
+      <input type="text" placeholder="Search products..." id="search">
+    
+      <!-- Wishlist Button -->
+      <a href="wishlist.html" class="icon-button">
+        <i class="fas fa-heart"></i>
+        <span class="icon-label">Wishlist</span>
+        <span class="badge" id="wishlistCount">0</span>
+      </a>
+    
+      <!-- Cart Button -->
+      <a href="cart.html" class="icon-button">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="icon-label">Cart</span>
+        <span class="badge" id="cartCount">0</span>
+      </a>
+    </div>
+    
+  </div>
+<!-- Banner Section -->
+<section class="banner">
+  <img src="banner_top.png" alt="Banner Image">
+  <div class="banner-text-top">
+    <h1>Welcome to Our Shopping Site</h1>
+    <p>Discover amazing products for you!</p>
+  </div>
+</section>
+
+<div class="scroll-banner-container">
+  <button class="scroll-btn left-btn" onclick="prevBanner()">&#10094;</button>
+  <div class="scroll-banner-wrapper">
+    <div class="scroll-banner">
+      <div class="banner-item">
+        <div class="banner-text">Elegant Rings Collection</div>
+        <img src="rings.png" alt="Banner 1">
+      </div>
+      <div class="banner-item">
+        <div class="banner-text">Beautiful Necklaces</div>
+        <img src="necklace.jpeg" alt="Banner 2">
+      </div>
+      <div class="banner-item">
+        <div class="banner-text">Stylish Earrings</div>
+        <img src="ear_rings.jpeg" alt="Banner 3">
+      </div>
+      <div class="banner-item">
+        <div class="banner-text">Trendy Turtle Pendants</div>
+        <img src="turtle.png" alt="Banner 4">
+      </div>
+    </div>
+  </div>
+  <button class="scroll-btn right-btn" onclick="nextBanner()">&#10095;</button>
+</div>
+
+
+<!-- Product Cards Section -->
+<a href="men.html">
+<div class="cards">
+<div class="product-card">
+  <div class="image-wrapper">
+    <img src="men1.png" alt="Product Image 1">
+    <img src="men2.jpeg" alt="Product Image 2">
+    <img src="men3.jpeg" alt="Product Image 3">
+    <img src="men4.jpeg" alt="Product Image 4">
+  </div>
+  <div class="product-info">
+    <h3>Men's</h3>
+    <p>Trendy Products related to men</p>
+  </div>
+</div>
+</a>
+<a href="women.html">
+<div class="product-card">
+  <div class="image-wrapper">
+    <img src="women1.png" alt="Product Image 1">
+    <img src="women2.jpeg" alt="Product Image 2">
+    <img src="women3.jpeg" alt="Product Image 3">
+    <img src="women4.jpeg" alt="Product Image 4">
+  </div>
+  <div class="product-info">
+    <h3>Women's</h3>
+    <p>Trendy Products related to women</p>
+  </div>
+</div>
+</a>
+<a href="kid.html">
+<div class="product-card">
+  <div class="image-wrapper">
+    <img src="kids1.png" alt="Product Image 1">
+    <img src="kids2.jpeg" alt="Product Image 2">
+    <img src="kids3.jpeg" alt="Product Image 3">
+    <img src="kids4.jpeg" alt="Product Image 4">
+  </div>
+  <div class="product-info">
+    <h3>Kid's</h3>
+    <p>Trendy Products related to kid's</p>
+  </div>
+</div>
+</a>
+<a href="ritual.html">
+<div class="product-card">
+  <div class="image-wrapper">
+    <img src="rituals1.png" alt="Product Image 1">
+    <img src="rituals2.jpeg" alt="Product Image 2">
+    <img src="rituals3.jpeg" alt="Product Image 3">
+    <img src="rituals4.jpeg" alt="Product Image 4">
+  </div>
+  <div class="product-info">
+    <h3>Ritual's</h3>
+    <p>Trendy Products related to religion</p>
+  </div>
+</div>
+</a>
+</div>
+
+
+
+
+<div class="featured-section">
+<h2>Popular Picks</h2>
+<div class="carousel">
+    <!-- <button class="nav-button prev-btn" onclick="moveLeft()">&#10094;</button> -->
+    <div class="carousel-frame">
+        <div class="carousel-track">
+            <div class="item-card">
+                <img src="men2.jpeg" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>$49.99</p>
+                <button class="purchase-btn">Buy Now</button>
+            </div>
+            <div class="item-card">
+                <img src="women2.jpeg" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>$59.99</p>
+                <button class="purchase-btn">Buy Now</button>
+            </div>
+            <div class="item-card">
+                <img src="kids2.jpeg" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>$39.99</p>
+                <button class="purchase-btn">Buy Now</button>
+            </div>
+            <div class="item-card">
+                <img src="rituals2.jpeg" alt="Product 4">
+                <h3>Product 4</h3>
+                <p>$89.99</p>
+                <button class="purchase-btn">Buy Now</button>
+            </div>
+            <div class="item-card">
+                <img src="rings.png" alt="Product 5">
+                <h3>Product 5</h3>
+                <p>$99.99</p>
+                <button class="purchase-btn">Buy Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="carousel">
+    <!-- <button class="nav-button prev-btn" onclick="moveLeft()">&#10094;</button> -->
+    <div class="carousel-frame">
+        <div class="carousel-track">
+            <div class="item-card">
+                <img src="men2.jpeg" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>$49.99</p>
+                <button class="purchase-btn">Buy Now</button>
+            </div>
+            <div class="item-card">
+                <img src="women2.jpeg" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>$59.99</p>
+                <button class="purchase-btn">Buy Now</button>
+            </div>
+            <div class="item-card">
+                <img src="kids2.jpeg" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>$39.99</p>
+                <button class="purchase-btn">Buy Now</button>
+            </div>
+            <div class="item-card">
+                <img src="rituals2.jpeg" alt="Product 4">
+                <h3>Product 4</h3>
+                <p>$89.99</p>
+                <button class="purchase-btn">Buy Now</button>
+            </div>
+            <div class="item-card">
+                <img src="rings.png" alt="Product 5">
+                <h3>Product 5</h3>
+                <p>$99.99</p>
+                <button class="purchase-btn">Buy Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+      <div class="footer-column">
+          <h3>Useful Links</h3>
+          <ul>
+              <li><a href="#">Delivery Information</a></li>
+              <li><a href="#">International Shipping</a></li>
+              <li><a href="#">Payment Options</a></li>
+              <li><a href="#">Track your Order</a></li>
+              <li><a href="#">Returns</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-column">
+          <h3>Information</h3>
+          <ul>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Offers & Contest Details</a></li>
+              <li><a href="#">Help & FAQs</a></li>
+              <li><a href="#">About</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul class="contact-list">
+              <li><i class="fa-regular fa-envelope"></i> <a href="#">Write to Us</a></li>
+              <li><i class="fa-solid fa-phone"></i> <a href="tel:18002660123">1800-266-0123</a></li>
+              <li><i class="fa-regular fa-message"></i> <a href="#">Chat with Us</a></li>
+          </ul>
+      </div>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Glamora</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.cart i {
+    cursor: pointer;
+}
+/* Banner */
+.banner {
+    background: url('assets/banner-bg.jpg') no-repeat center center/cover;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Adding an overlay for better readability */
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for readability */
+    z-index: 1;
+}
+
+/* Ensuring text appears above the overlay */
+.banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.banner-content h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.banner-content p {
+    font-size: 16px;
+}
+
+
+.container {
+    display: flex;
+    margin: 20px;
+}
+/* Filter Products Styling */
+.filter-products {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.filter-products h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.filter-products h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.filter-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-category li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.filter-category input {
+    accent-color: black;
+    margin-right: 8px;
+}
+
+.filter-price {
+    margin-top: 15px;
+}
+
+.price-slider input {
+    width: 100%;
+}
+
+.price-slider span {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.filter-color {
+    margin-top: 15px;
+}
+
+.color-options {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.color:hover {
+    border: 2px solid #333;
+}
+
+/* Color options */
+.black { background: black; }
+.red { background: red; }
+.blue { background: blue; }
+.green { background: green; }
+.yellow { background: yellow; }
+.brown { background: brown; }
+
+.apply-filters {
+    width: 100%;
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.apply-filters:hover {
+    background: #333;
+}
+
+
+/* Color Options */
+.color-options {
+    display: flex;
+    gap: 10px;
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.black { background: black; }
+.red { background: red; }
+.brown { background: brown; }
+.blue { background: blue; }
+.cream { background: beige; }
+
+/* Product Grid */
+.product-grid {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+}
+
+</style>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Celeste Silver</div>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="products.html">SHOP ▼</a></li>
+            <li><a href="aboutus.html">ABOUT</a></li>
+            <li><a href="contactus.html">CONTACT</a></li>
+        </ul>
+        <div class="cart">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-shopping-cart"></i> MY CART
+        </div>
+    </nav>
+
+    <!-- Banner -->
+   <!-- Banner -->
+<section class="banner">
+    <div class="banner-content">
+        <h1>20% OFF ONLY TODAY AND GET SPECIAL GIFT!</h1>
+        <p>Today only, enjoy a stylish 20% off and receive an exclusive gift! Elevate your wardrobe now! ✨</p>
+    </div>
+</section>
+
+
+    <div class="container">
+        <!-- Sidebar Filters -->
+        <!-- Filter Products Section -->
+<aside class="filter-products">
+    <h3>Filter Products</h3>
+    <div class="filter-category">
+        <h4>Category</h4>
+        <ul>
+            <li><label><input type="checkbox"> Jackets & Coats <span>127</span></label></li>
+            <li><label><input type="checkbox"> Shirts <span>108</span></label></li>
+            <li><label><input type="checkbox"> T-Shirts <span>100</span></label></li>
+            <li><label><input type="checkbox"> Outer & Blazer <span>48</span></label></li>
+            <li><label><input type="checkbox"> Hoodies <span>48</span></label></li>
+            <li><label><input type="checkbox"> Pants <span>42</span></label></li>
+        </ul>
+    </div>
+
+    <div class="filter-price">
+        <h4>Price</h4>
+        <div class="price-slider">
+            <input type="range" id="priceRange" min="100" max="500" value="500">
+            <span id="priceValue">$500</span>
+        </div>
+    </div>
+    
+
+    <div class="filter-color">
+        <h4>Color</h4>
+        <div class="color-options">
+            <span class="color black"></span>
+            <span class="color red"></span>
+            <span class="color blue"></span>
+            <span class="color green"></span>
+            <span class="color yellow"></span>
+            <span class="color brown"></span>
+        </div>
+    </div>
+
+    <button class="apply-filters">Apply Filters</button>
+</aside>
+
+
+        <!-- Product Grid -->
+        <section class="product-grid">
+            <h3>Showing 12 results from total 127 for <b>'Jacket & Coats'</b></h3>
+
+            <div class="products">
+                <a href="product.html">
+                <div class="product" data-price="100">
+                    <img src="men_1.png" alt="Knit Ottoman Comb Jacket">
+                    <p>Knit Ottoman Comb Jacket</p>
+                    <p class="price">$100</p>
+                </div></a>
+
+                <a href="product.html">
+                <div class="product" data-price="350">
+                    <img src="women_1.png" alt="Knit Varsity Jacket">
+                    <p>Knit Varsity Jacket</p>
+                    <p class="price">$350</p>
+                </div></a>
+
+                <a href="product.html">
+                <div class="product" data-price="275">
+                    <img src="women_2.png" alt="Knit Fleece Jacket">
+                    <p>Knit Fleece Jacket</p>
+                    <p class="price">$275</p>
+                </div></a>
+
+                <a href="product.html">
+                <div class="product" data-price="200">
+                    <img src="men_1.png" alt="Sequoi Varsity Jacket">
+                    <p>Sequoi Varsity Jacket</p>
+                    <p class="price">$200</p>
+                </div></a>
+
+                <a href="product.html">
+                <div class="product" data-price="400">
+                    <img src="women_1.png" alt="Casual Simply Jacket">
+                    <p>Casual Simply Jacket</p>
+                    <p class="price">$400</p>
+                </div></a>
+
+                <a href="product.html">
+                <div class="product" data-price="225">
+                    <img src="women_2.png" alt="Contrast Sleeve Varsity">
+                    <p>Contrast Sleeve Varsity</p>
+                    <p class="price">$225</p>
+                </div></a>
+            </div>
+        </section>
+    </div>
+
+</body>
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const priceRange = document.getElementById("priceRange");
+    const priceValue = document.getElementById("priceValue");
+    const products = document.querySelectorAll(".product");
+
+    priceRange.addEventListener("input", function () {
+        const selectedPrice = parseInt(priceRange.value);
+        priceValue.textContent = `$${selectedPrice}`; // Update UI price display
+
+        products.forEach(product => {
+            const productPrice = parseInt(product.getAttribute("data-price"));
+            if (productPrice <= selectedPrice) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    });
+});
+
+</script>
+</html>
