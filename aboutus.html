@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Silver Ornaments</title>
+
+    <!-- Google Font - Pacifico for Business Name -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .nav-button {
+            margin: 50px;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #333;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .nav-button:hover {
+            background-color: #555;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: rgb(211, 207, 207);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: none; /* Initially hidden */
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 28px;
+            color: #444;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            padding: 10px;
+            border: 2px solid #333;
+            display: inline-block;
+            border-radius: 8px;
+            margin: 20px auto;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #0f0e0e;
+            text-align: center;
+        }
+        .image-section {
+            margin: 20px 0;
+        }
+        .image-section img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 250px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .contact-info a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-info a:hover {
+            color: #1f1d1d;
+        }
+    </style>
+<body>
+
+    <button class="nav-button" onclick="toggleAboutUs()">About Us</button>
+
+    <div class="container" id="aboutUsSection">
+        <h1>About <span class="business-name">Celeste Silver – "Celeste" means heavenly, giving a divine touch</span></h1>
+
+        <!-- Business Introduction -->
+        <p>At <strong>Celeste Silver – "Celeste" means heavenly, giving a divine touch/strong>, we believe that silver is more than just a metal—it's a symbol of elegance,  
+           tradition, and timeless beauty. Our passion for fine craftsmanship and intricate designs has driven us to create a  
+           stunning collection of handcrafted silver ornaments that celebrate both heritage and modern trends.</p>
+
+        <p>With years of expertise, we offer an exquisite range of rings, bracelets, necklaces, earrings, anklets, and more,  
+           designed to complement every occasion and personality. Each piece in our collection is crafted with precision and love,  
+           ensuring premium quality and unique artistry.</p>
+
+        <p>We are committed to delivering authentic, high-quality silver jewelry that not only enhances your beauty but also  
+           becomes a cherished part of your journey. Whether you’re looking for a delicate everyday accessory or an elaborate  
+           statement piece, we have something special for you.</p>
+
+        <p>At <strong>Celeste Silver – "Celeste" means heavenly, giving a divine touch</strong>, we value trust, quality, and customer satisfaction above all.  
+           Explore our collection and experience the magic of silver like never before!</p>
+
+        <!-- First Image Section -->
+        <div class="image-section">
+            <img src="aboutus.jpg.webp" alt="Company Image 1">
+        </div>
+
+        <div class="section-title">📅 Our Journey</div>
+        <p>Founded on <strong>[Incorporation Date]</strong>, <span class="business-name">Your Business Name</span>  
+           was born from the vision of <strong>[Founder Names]</strong>. What started as a dream has now  
+           flourished into a brand known for premium quality, authenticity, and craftsmanship.</p>
+
+        <div class="section-title">💎 Our Commitment</div>
+        <p>We take pride in delivering authentic, handcrafted silver jewelry that enhances your beauty  
+           and stands the test of time. Each piece is meticulously designed and crafted with precision.</p>
+
+        <div class="section-title">🤝 Meet the Team</div>
+        <p>Behind every design is a dedicated team of artisans, designers, and jewelry experts who  
+           work tirelessly to bring our collections to life.</p>
+
+        <!-- Second Image Section -->
+        <div class="image-section">
+            <img src="teem.jpg" alt="Company Team">
+        </div>
+
+        <div class="section-title">✨ Experience the Magic of Silver</div>
+        <p>Join us on this journey and explore our world of exquisite silver ornaments.  
+           We promise you nothing but the finest quality, timeless elegance, and an unforgettable shopping experience.</p>
+
+        <div class="contact-info">
+            📍 <strong>Location:</strong> WASHINGTON DC <br>
+            📞 <strong>Contact:</strong> <a href="tel:+1234567890">+1234567890</a> <br>
+            📧 <strong>Email:</strong> <a href="mailto:info@yourbusiness.com">info@yourbusiness.com</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleAboutUs() {
+            var section = document.getElementById("aboutUsSection");
+            if (section.style.display === "none" || section.style.display === "") {
+                section.style.display = "block"; // Show content
+            } else {
+                section.style.display = "none"; // Hide content
+            }
+        }
+    </script>
+
+</body>
+</html>
